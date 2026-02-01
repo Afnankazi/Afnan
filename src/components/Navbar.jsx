@@ -41,10 +41,10 @@ export default function NavbarDemo() {
           <NavItems items={navItems} />
           <div className="flex items-center gap-4">
             <Link to="/hackathons">
-              <NavbarButton variant="primary">Hackathons</NavbarButton>
+              <NavbarButton as="span" variant="primary">Hackathons</NavbarButton>
             </Link>
             <a href="#contact">
-              <NavbarButton variant="primary">contact</NavbarButton>
+              <NavbarButton as="span" variant="primary">contact</NavbarButton>
             </a>
           </div>
         </NavBody>
@@ -71,6 +71,7 @@ export default function NavbarDemo() {
             <div className="flex w-full flex-col gap-4">
               <Link to="/hackathons" onClick={() => setIsMobileMenuOpen(false)}>
                 <NavbarButton
+                  as="span"
                   variant="primary"
                   className="w-full">
                   Hackathons
@@ -79,6 +80,7 @@ export default function NavbarDemo() {
 
               <a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>
                 <NavbarButton
+                  as="span"
                   variant="primary"
                   className="w-full">
                   contact

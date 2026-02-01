@@ -52,8 +52,15 @@ export const CarCanvas = () => {
     <Canvas
       frameloop="always"
       shadows
+      dpr={[1, 2]}
       camera={{ position: [0, 0, 1], fov: 20 }}
-      gl={{ preserveDrawingBuffer: true, shadowMap: { enabled: true } }}
+      gl={{
+        preserveDrawingBuffer: true,
+        antialias: false,
+        alpha: true,
+        shadowMap: { enabled: true }
+      }}
+      style={{ width: '100%', height: '100%' }}
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls

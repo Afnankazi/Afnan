@@ -28,13 +28,13 @@ export const Timeline = ({ data }) => {
     <div className="w-full  font-sans md:px-10" ref={containerRef}>
       <motion.div variants={textVariant()} className="max-w-7xl mx-auto py-18 px-4 md:px-8 lg:px-5">
         <h2 className="text-lg md:text-4xl mb-4 text-black dark:text-white max-w-4xl">
-          <p className={styles.sectionSubText}>Introduction</p>
+          <span className={styles.sectionSubText}>Introduction</span>
         </h2>
-        <p className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base max-w-7xl">
+        <div className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base max-w-7xl">
           <p className={styles.sectionHeadText}>
             Changelog from my journey
           </p>
-        </p>
+        </div>
       </motion.div>
       <div ref={ref} className="relative max-w-7xl mx-auto pb-20">
         {data.map((item, index) => (

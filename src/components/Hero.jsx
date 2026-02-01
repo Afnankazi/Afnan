@@ -1,9 +1,33 @@
 import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 
 import { styles } from "../utils/styles";
 import { ComputersCanvas } from "./canvas";
 
 const Hero = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Check if screen is mobile
+    const mediaQuery = window.matchMedia("(max-width: 768px)");
+
+    // Set the initial value
+    setIsMobile(mediaQuery.matches);
+
+    // Define callback function to handle changes
+    const handleMediaQueryChange = (event) => {
+      setIsMobile(event.matches);
+    };
+
+    // Add the callback function as a listener for changes to the media query
+    mediaQuery.addEventListener("change", handleMediaQueryChange);
+
+    // Remove the listener when the component is unmounted
+    return () => {
+      mediaQuery.removeEventListener("change", handleMediaQueryChange);
+    };
+  }, []);
+
   return (
     <section className={`relative w-full h-screen mx-auto`}>
       <div
@@ -19,13 +43,24 @@ const Hero = () => {
             Hi, I'm <span className='text-[#915EFF]'>Afnan kazi</span>
           </h1>
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-              Creating Cool Applications That Actually Make an Impacts
+            Creating Cool Applications That Actually Make an Impacts
           </p>
         </div>
       </div>
 
-      <div className="absolute inset-0 w-full h-full">
-        <ComputersCanvas />
+      {/* Background - Canvas for desktop, Image for mobile */}
+      <div className="absolute inset-0 w-full h-full flex items-center justify-center">
+        {isMobile ? (
+          // Mobile: Show static computer image
+          <img
+            src="/comp.png"
+            alt="Computer"
+            className="object-contain opacity-100 scale-100 mt-20"
+          />
+        ) : (
+          // Desktop: Show 3D Canvas
+          <ComputersCanvas />
+        )}
       </div>
 
       <div className='absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center'>
