@@ -232,4 +232,17 @@
       transform: translate(calc(-50% - 0.5rem));
     }
   }
+
+  /* Custom loader animations */
+  @keyframes spin-slow {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(-360deg);
+    }
+  }
+
+  --animate-spin-slow: spin-slow 2s linear infinite;
 }

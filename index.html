@@ -1,16 +1,53 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/logo.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <title>Afnan Kazi</title>
-  </head>
-  <body>
-    <div id="root" class="dark" ></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/logo.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO Meta Tags -->
+  <meta name="description"
+    content="Afnan Kazi - Software Developer specializing in React, Next.js, Three.js, and modern web applications. Building fast, scalable, and user-friendly solutions." />
+  <meta name="keywords"
+    content="Afnan Kazi, Software Developer, React Developer, Next.js, Three.js, Web Development, Portfolio" />
+  <meta name="author" content="Afnan Kazi" />
+  <meta name="theme-color" content="#050816" />
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Afnan Kazi - Software Developer" />
+  <meta property="og:description" content="Creating cool applications that actually make an impact" />
+
+  <!-- DNS Prefetch for faster font loading -->
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+
+  <!-- Preconnect for critical resources with crossorigin -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Optimized font loading with font-display swap -->
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"
+    media="print" onload="this.media='all'" />
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  </noscript>
+
+  <!-- Preload critical JavaScript module -->
+  <link rel="modulepreload" href="/src/main.jsx" />
+
+  <!-- Preload critical CSS -->
+  <link rel="preload" href="/src/index.css" as="style" />
+
+  <title>Afnan Kazi - Software Developer | Portfolio</title>
+</head>
+
+<body>
+  <div id="root" class="dark"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
 </html>

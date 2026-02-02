@@ -9,12 +9,6 @@ import { sectionWrapper } from "../HOC/section-wrapper";
 export function GlareCardDemo({ service  , index}) {
   return (
     <GlareCard  
-      variants={fadeIn("right" , "spring" , 0.3 * index, 1)} 
-      whileHover={{ 
-        y: -10, 
-        scale: 1.02,
-        transition: { type: "spring", stiffness: 300, damping: 20 }
-      }}
       className="flex flex-col items-center justify-center shadow-card "
     >
       <img src={service.icon} alt={service.title} height={100} width={100} />
@@ -43,10 +37,6 @@ const About = () => {
       </motion.p>
 
       <motion.div 
-        variants={staggerContainer(0.1, 0.2)}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, amount: 0.25 }}
         className="flex flex-wrap gap-10 mt-1.5 xl:flex-row mt-7 "
       >
         {services.map((service, index) => (
